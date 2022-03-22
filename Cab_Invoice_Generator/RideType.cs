@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Cab_Invoice_Generator
 {
-    internal class Program
+    public enum RIDE_TYPE
     {
-        static void Main(string[] args)
-        {
-         
-        }
+        NORMAL,
+        PREMIUM
     }
 }
