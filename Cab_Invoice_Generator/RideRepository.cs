@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace Cab_Invoice_Generator
 {
-    
     public class RideRepository
     {
         Dictionary<string, List<Ride>> user = null;

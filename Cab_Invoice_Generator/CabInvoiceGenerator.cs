@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cab_Invoice_Generator
 {
-    public class Cabinvoicegenerator
+    public class CabInvoiceGenerator
     {
         
         RIDE_TYPE type;
@@ -15,7 +15,7 @@ namespace Cab_Invoice_Generator
         private readonly Double MINIMUM_FARE;
 
 
-        public Cabinvoicegenerator(RIDE_TYPE ridetype)
+        public CabInvoiceGenerator(RIDE_TYPE ridetype)
         {
             this.type = ridetype;
             try
