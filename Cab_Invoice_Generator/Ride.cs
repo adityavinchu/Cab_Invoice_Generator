@@ -12,4 +12,5 @@ namespace Cab_Invoice_Generator
         public int time;
         public RIDE_TYPE type;
     }
+
 }
