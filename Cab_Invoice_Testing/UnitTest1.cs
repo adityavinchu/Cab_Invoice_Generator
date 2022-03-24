@@ -19,29 +19,30 @@ namespace Cab_Invoice_Testing
         }
 
         [Test]
-        public void CheckForTotalFare()
+        public void Check_TotalFare()
         {
 
-            invoiceGenerator.AddRide("ABC", 2, 5, new RIDE_TYPE().Normal);
-            invoiceGenerator.AddRide("ABC", 12, 15, new RIDE_TYPE().Normal);
+            invoiceGenerator.Add_Ride("ABC", 2, 5, new RIDE_TYPE().Normal);
+            invoiceGenerator.Add_Ride("ABC", 12, 15, new RIDE_TYPE().Normal);
             var fare = invoiceGenerator.CalculateAggregate("ABC");
             Assert.AreEqual(135, fare.totalFare);
         }
+       
         [Test]
-        public void CheckForNoOfRides()
+        public void Check_AverageFare()
         {
-            invoiceGenerator.AddRide("XYZ", 2, 5, new RIDE_TYPE().Normal);
-            invoiceGenerator.AddRide("XYZ", 12, 15, new RIDE_TYPE().Normal);
-            var fare = invoiceGenerator.CalculateAggregate("XYZ");
-            Assert.AreEqual(1, fare.no_of_rides);
-        }
-        [Test]
-        public void CheckForAverageFare()
-        {
-            invoiceGenerator.AddRide("XYZ", 2, 5, new RIDE_TYPE().Normal);
-            invoiceGenerator.AddRide("XYZ", 12, 15, new RIDE_TYPE().Normal);
+            invoiceGenerator.Add_Ride("XYZ", 2, 5, new RIDE_TYPE().Normal);
+            invoiceGenerator.Add_Ride("XYZ", 12, 15, new RIDE_TYPE().Normal);
             var fare = invoiceGenerator.CalculateAggregate("XYZ");
             Assert.AreEqual(25, fare.avgFare);
+        }
+        [Test]
+        public void Check_NoOfRides()
+        {
+            invoiceGenerator.Add_Ride("XYZ", 2, 5, new RIDE_TYPE().Normal);
+            invoiceGenerator.Add_Ride("XYZ", 12, 15, new RIDE_TYPE().Normal);
+            var fare = invoiceGenerator.CalculateAggregate("XYZ");
+            Assert.AreEqual(1, fare.no_of_rides);
         }
     }
 }

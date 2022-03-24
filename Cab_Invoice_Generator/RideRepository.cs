@@ -9,7 +9,7 @@ namespace Cab_Invoice_Generator
     public class RideRepository
     {
         public Dictionary<string, List<Ride>> UserRides = new Dictionary<string, List<Ride>>();
-        public void AddRideInRepo(string user, List<Ride> rides)
+        public void AddRideInRepository(string user, List<Ride> rides)
         {
             UserRides[user] = rides;
         }

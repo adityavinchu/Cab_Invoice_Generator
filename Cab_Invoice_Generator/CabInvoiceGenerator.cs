@@ -21,7 +21,7 @@ namespace Cab_Invoice_Generator
             else
                 return result;
         }
-        public void AddRide(string name, int distance, int time, RIDE_TYPE rideType)
+        public void Add_Ride(string name, int distance, int time, RIDE_TYPE rideType)
         {
             var userRides = rideRepository.GetRideByUserId(name);
             if (userRides == null)
@@ -33,7 +33,7 @@ namespace Cab_Invoice_Generator
                     time = time,
                     type = rideType
                 });
-                rideRepository.AddRideInRepo(name, userRide);
+                rideRepository.AddRideInRepository(name, userRide);
             }
             else
             {
@@ -43,7 +43,7 @@ namespace Cab_Invoice_Generator
                     time = time,
                     type = rideType
                 });
-                rideRepository.AddRideInRepo(name, userRides);
+                rideRepository.AddRideInRepository(name, userRides);
             }
         }
         public InvoiceSummary CalculateAggregate(string user)
