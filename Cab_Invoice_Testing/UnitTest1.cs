@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 using Cab_Invoice_Generator;
 using NUnit.Framework;
+=======
+using NUnit.Framework;
+using Cab_Invoice_Generator;
+>>>>>>> UC5_PremiumRides
 
 namespace Cab_Invoice_Testing
 {
@@ -27,7 +32,11 @@ namespace Cab_Invoice_Testing
             var fare = invoiceGenerator.CalculateAggregate("ABC");
             Assert.AreEqual(135, fare.totalFare);
         }
+<<<<<<< HEAD
        
+=======
+
+>>>>>>> UC5_PremiumRides
         [Test]
         public void Check_AverageFare()
         {
