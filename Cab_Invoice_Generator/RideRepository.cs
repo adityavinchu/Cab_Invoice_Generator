@@ -8,38 +8,20 @@ namespace Cab_Invoice_Generator
 {
     public class RideRepository
     {
-        Dictionary<string, List<Ride>> user = null;
-        public RideRepository()
+        public Dictionary<string, List<Ride>> UserRides = new Dictionary<string, List<Ride>>();
+        public void AddRideInRepository(string user, List<Ride> rides)
         {
-            this.user = new Dictionary<string, List<Ride>>();
+            UserRides[user] = rides;
         }
-        public void AddRide(string userid, Ride[] ride)
-        {
-            bool contains = this.user.ContainsKey(userid);
-            try
-            {
-                if (contains)
-                {
-
-                    List<Ride> list = new List<Ride>();
-                    list.AddRange(ride);
-                }
-            }
-            catch (CabInvoiceException)
-            {
-                throw new CabInvoiceException(CabInvoiceException.ExceptionType.NULL_RIDES, "Rides are NUll");
-            }
-        }
-        public Ride[] GetRide(string userid)
+        public List<Ride> GetRideByUserId(string user)
         {
             try
             {
-                return this.user[userid].ToArray();
+                return UserRides[user];
             }
-            catch (CabInvoiceException)
+            catch (Exception ex)
             {
-                throw new CabInvoiceException(CabInvoiceException.ExceptionType.INVALID_USER_ID, "User id is invalid");
-
+                return null;
             }
         }
     }
